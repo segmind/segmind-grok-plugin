@@ -1,0 +1,14 @@
+{
+  "name": "segmind",
+  "version": "1.0.0",
+  "description": "Segmind media generation for Grok Build via the hosted Segmind MCP server at mcp.segmind.com. Find, price and run 500+ image, video, audio, 3D and language models, find, build and run Pixelflows (saved multi-model workflows), then save the outputs into your project or write code that calls the Segmind API. Sign in with your Segmind account on first connect; no API key needed.",
+  "author": {
+    "name": "Segmind",
+    "url": "https://www.segmind.com"
+  },
+  "homepage": "https://www.segmind.com/mcp",
+  "repository": "https://github.com/segmind/segmind-grok-plugin",
+  "license": "MIT",
+  "keywords": ["segmind", "segmind api", "segmind mcp", "segmind pixelflow"],
+  "logo": "assets/logo.svg"
+}

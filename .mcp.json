@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "segmind": {
+      "type": "http",
+      "url": "https://mcp.segmind.com/mcp",
+      "note": "Official Segmind hosted MCP server (Streamable HTTP). Requires OAuth: on first connection you sign in to your Segmind account in the browser; no API key to paste. Tools: list_models, compare_models, get_model_spec, run_inference, submit_inference, check_inference, list_pixelflows, get_pixelflow_spec, submit_pixelflow, check_pixelflow, validate_pixelflow, create_pixelflow, get_pixelflow, update_pixelflow, restore_pixelflow, publish_pixelflow, create_upload_ticket, upload_media, list_generations, list_request_history, get_account, ping."
+    }
+  }
+}
