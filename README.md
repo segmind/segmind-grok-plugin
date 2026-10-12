@@ -21,10 +21,14 @@ unchanged; update it there, not in this repo.
 
 In Grok Build, open `/plugins`, find **Segmind** in the Marketplace tab, and install it.
 
-To try a local checkout instead:
+To install straight from this repo, or from a local checkout, instead:
 
 ```bash
-grok --plugin-dir /path/to/segmind-grok-plugin
+grok plugin install segmind/segmind-grok-plugin
+```
+
+```bash
+grok plugin install /path/to/segmind-grok-plugin
 ```
 
 ## Authentication
