@@ -38,6 +38,11 @@ browser. Sign in with your Segmind account and approve the connection. You can a
 it from `/mcps`: select `segmind` and press `i`.
 
 - No API key is stored in the plugin, and you never paste one into chat.
+- Grok signs in as the OAuth client "Grok Build (Segmind plugin)". Segmind's authorization
+  server does not offer dynamic client registration, so `.mcp.json` names the client by URL:
+  a client ID metadata document Segmind serves at
+  `https://mcp.segmind.com/oauth/grok-build-client.json`. It declares a public client (PKCE,
+  no secret) whose only redirect is Grok's local callback, `http://127.0.0.1:<port>/callback`.
 - Runs bill the Segmind account you approved at sign-in. Ask "how many Segmind credits do
   I have?" to see the balance and which account is billed. To switch accounts, reconnect
   and pick another account on the sign-in screen.
@@ -59,6 +64,7 @@ it from `/mcps`: select `segmind` and press `i`.
 | `https://mcp.segmind.com/mcp` | The hosted MCP server. Every tool call goes here. |
 | `https://cloud.segmind.com/api` | OAuth 2.1 authorization server: discovery, `/oauth/authorize`, `/oauth/token`. |
 | `https://platform.segmind.com` | The browser sign-in and consent pages. |
+| `https://mcp.segmind.com/oauth/grok-build-client.json` | The plugin's OAuth client document. Segmind's authorization server fetches it during sign-in; the agent does not. |
 | `https://segmind-transient-inputs.s3.amazonaws.com` | Presigned upload URLs. Used only when you ask to use a local file as a model input; the agent PUTs that one file. |
 | `https://images.segmind.com` | Where generated outputs and uploaded inputs are served from; the agent downloads outputs from here into your project. |
 
@@ -68,10 +74,10 @@ agent never to read your `.env` or other secret files, hard-code a key, or commi
 
 ## Credentials and permissions
 
-- **Credential:** a Segmind account, used via OAuth. The consent screen lists the scopes
-  Segmind's authorization server offers: `models:read`, `models:invoke` (running models,
-  which spends credits), `workflows:read`, `workflows:write`, `profile`, `email` and
-  `offline_access` (so the connection stays signed in).
+- **Credential:** a Segmind account, used via OAuth. The plugin requests exactly these
+  scopes, listed on the consent screen: `models:read`, `models:invoke` (running models,
+  which spends credits), `workflows:read`, `workflows:write` (saving and editing your
+  Pixelflows) and `offline_access` (so the connection stays signed in).
 - **Spending:** generation and Pixelflow runs bill your Segmind credits, within your
   account's spend limit. The skills tell the agent to state the cost before any run over
   $0.50 and the total before a batch, and never to start a run your stated budget cannot

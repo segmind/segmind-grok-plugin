@@ -4,10 +4,10 @@
       "type": "http",
       "url": "https://mcp.segmind.com/mcp",
       "oauth": {
-        "clientId": "https://raw.githubusercontent.com/segmind/segmind-grok-plugin/main/oauth/grok-build-client.json",
+        "clientId": "https://mcp.segmind.com/oauth/grok-build-client.json",
         "scopes": ["models:read", "models:invoke", "workflows:read", "workflows:write", "offline_access"]
       },
-      "note": "Official Segmind hosted MCP server (Streamable HTTP). Requires OAuth: on first connection you sign in to your Segmind account in the browser; no API key to paste. Segmind's authorization server does not offer dynamic client registration, so the plugin names its OAuth client by URL (a client ID metadata document in this repo, oauth/grok-build-client.json). Tools: list_models, compare_models, get_model_spec, run_inference, submit_inference, check_inference, list_pixelflows, get_pixelflow_spec, submit_pixelflow, check_pixelflow, validate_pixelflow, create_pixelflow, get_pixelflow, update_pixelflow, restore_pixelflow, publish_pixelflow, create_upload_ticket, upload_media, list_generations, list_request_history, get_account, ping."
+      "note": "Official Segmind hosted MCP server (Streamable HTTP). Requires OAuth: on first connection you sign in to your Segmind account in the browser; no API key to paste. Segmind's authorization server does not offer dynamic client registration, so the plugin names its OAuth client by URL: a client ID metadata document Segmind serves at https://mcp.segmind.com/oauth/grok-build-client.json. Tools: list_models, compare_models, get_model_spec, run_inference, submit_inference, check_inference, list_pixelflows, get_pixelflow_spec, submit_pixelflow, check_pixelflow, validate_pixelflow, create_pixelflow, get_pixelflow, update_pixelflow, restore_pixelflow, publish_pixelflow, create_upload_ticket, upload_media, list_generations, list_request_history, get_account, ping."
     }
   }
 }
